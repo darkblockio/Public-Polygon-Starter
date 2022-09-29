@@ -6,7 +6,7 @@ import { collection } from '../utils/collection'
 import { Loading } from '../components/Loading'
 import { Web3Context } from '../context/Web3Context'
 
-const platform = 'Ethereum'
+const platform = 'Polygon'
 
 export default function Home() {
   const [myNfts, setMyNfts] = useState([])
@@ -20,7 +20,7 @@ export default function Home() {
   const { address } = useContext(Web3Context)
 
   const getData = async () => {
-    await getNFTs(process.env.NEXT_PUBLIC_REACT_APP_WALLET_ADDRESS, 'Ethereum', offset).then((res) => {
+    await getNFTs(process.env.NEXT_PUBLIC_REACT_APP_WALLET_ADDRESS, 'Polygon', offset).then((res) => {
       setIsLoaded(false)
       setArrayOfNfts(res.nfts.data)
       setOffset(res.next_offset)
