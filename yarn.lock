@@ -1188,10 +1188,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
   integrity sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==
 
-"@darkblock.io/eth-widget@^0.2.12":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@darkblock.io/eth-widget/-/eth-widget-0.2.15.tgz#457eb0aade2c191b7bc55dc668a1e06467a73d22"
-  integrity sha512-2fLNcq9NXsOls7vhP14CdUOmjLR5s5aNxKZdRa753/0A8hnMLaYcrcsyVIJj9IUJlKj3CMv7p6sWFwCxBEMIuA==
+"@darkblock.io/matic-widget@0.2.13":
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@darkblock.io/matic-widget/-/matic-widget-0.2.13.tgz#5bc1906b6deb7993339fb532e240f740f744df10"
+  integrity sha512-6MyBPRWWZwneSuLPFiiJahZJcNNxh2HM4U8Awwoej/RSYpFZbI4ARuO+GnofAl31XfyfO4dsVsJuwSyMtvKETQ==
   dependencies:
     "@xstate/react" "^2.0.0"
     openseadragon "^3.0.0"

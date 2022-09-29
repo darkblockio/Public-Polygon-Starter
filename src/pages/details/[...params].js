@@ -6,7 +6,7 @@ import { dateTimeFormat } from '../../utils/dateFormatter'
 import { shortenAddr } from '../../utils/shortAddress'
 import { useRouter } from 'next/router'
 import { Web3Context } from '../../context/Web3Context'
-import { EthWidget } from '../../components/EthWidget'
+import { PolygonWidget } from "../../components/PolygonWidget";
 import { Loading } from '../../components/Loading'
 
 const countAttribs = (nft) => {
@@ -63,16 +63,16 @@ const NftDetailCard = () => {
 
               <div className="w-full max-w-4xl mx-auto md:col-span-2">
                 <div className="hidden mb-10 font-sans text-4xl font-bold md:block md:mb-3">{nftData.name}</div>
-                <div className="pt-2 mx-2">{nftData.nft_description}</div>
+                <div className="pt-2 mx-2">{nftData.nft_description || nftData.description}</div>
                 <div className="mx-4 md:mr-2">
 
                   {
                     <div className="flex justify-end pb-4">
-                      <EthWidget contract={nftData.contract} id={nftData.token} w3={wallet} upgrade={true} />
+                      <PolygonWidget contract={nftData.contract} id={nftData.token} w3={wallet} upgrade={true} />
                     </div>
                   }
 
-                  {<EthWidget contract={nftData.contract} id={nftData.token} w3={wallet} />}
+                  {<PolygonWidget contract={nftData.contract} id={nftData.token} w3={wallet} />}
                 </div>
               </div>
             </div>
