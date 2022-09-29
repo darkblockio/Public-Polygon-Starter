@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
+import { validateImage } from "../utils/validateImage";
 
 const NftCard = ({ nft }) => {
   const { name, image, is_darkblocked, contract, token } = nft
@@ -13,7 +14,7 @@ const NftCard = ({ nft }) => {
               className='object-cover mx-auto h-72 rounded-t-xl'
               loading={'lazy'}
               alt={image}
-              src={image}
+              src={validateImage(image)}
             />
           </div>
           <div className="w-full p-3 text-left h-28">
