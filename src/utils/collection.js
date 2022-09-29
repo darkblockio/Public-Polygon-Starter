@@ -2,7 +2,7 @@ export const collection = [
 	{
 		name: "Buddy 001",
 		description: "",
-		contract: "0xc0572DaD3aE3458BB5368aE0236bA6C26d24dEba",
+		contract: "0xc0572dad3ae3458bb5368ae0236ba6c26d24deba",
 		creator_address: "0x971afeb84c2265147229c42920f3dbc6dd11bbfe",
 		token: "0",
 		creator_name: null,
@@ -13,7 +13,7 @@ export const collection = [
 	{
 		name: "Buddy 002",
 		description: "",
-		contract: "0xc0572DaD3aE3458BB5368aE0236bA6C26d24dEba",
+		contract: "0xc0572dad3ae3458bb5368ae0236ba6c26d24deba",
 		creator_address: "0x971afeb84c2265147229c42920f3dbc6dd11bbfe",
 		token: "1",
 		creator_name: null,
@@ -24,7 +24,7 @@ export const collection = [
 	{
 		name: "Buddy 003",
 		description: "",
-		contract: "0xc0572DaD3aE3458BB5368aE0236bA6C26d24dEba",
+		contract: "0xc0572dad3ae3458bb5368ae0236ba6c26d24deba",
 		creator_address: "0x971afeb84c2265147229c42920f3dbc6dd11bbfe",
 		token: "2",
 		creator_name: null,
