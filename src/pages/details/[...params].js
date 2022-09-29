@@ -23,7 +23,7 @@ const NftDetailCard = () => {
   const router = useRouter()
   const contract = router.query.params ? router.query.params[0] : null
   const id = router.query.params ? router.query.params[1] : null
-  const platform = 'Ethereum'
+  const platform = 'Polygon'
   const [nftData, setNftData] = useState(null)
   const { wallet } = useContext(Web3Context)
   const [isLoading, setIsLoading] = useState(false)
