@@ -28,7 +28,7 @@ const Header = () => {
 
     // Non-dapp browsers...
     else {
-      console.log('Non-Ethereum browser detected. You should consider trying MetaMask!')
+      console.log('Non-Polygon browser detected. You should consider trying MetaMask!')
     }
 
     const accounts = await web3.eth.getAccounts()
