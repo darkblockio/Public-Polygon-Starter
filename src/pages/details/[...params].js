@@ -67,7 +67,7 @@ const NftDetailCard = () => {
                 <div className="mx-4 md:mr-2">
 
                   {
-                    <div className="flex justify-end pb-4">
+                    <div className="flex justify-end pb-4 text-gray-800">
                       <PolygonWidget contract={nftData.contract} id={nftData.token} w3={wallet} upgrade={true} />
                     </div>
                   }
