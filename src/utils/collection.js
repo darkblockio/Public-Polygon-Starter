@@ -50,5 +50,15 @@ export const collection = [
 	    creator_name: null,
 	    image: "https://ipfs.io/ipfs/QmUuUfHZiYAAgoQQ8aLLJsjNpeyPHH44WY6U5rKfT1sM78/5buddyPFP.png",
 	    is_darkblocked: false
+	},
+	{
+		name: "Buddy Test 2",
+		description: "",
+	    contract: "0x293ccf2a14c529eaffbd3c73b5c2027c86f83aad",
+	    creator_address: "0x293ccf2a14c529eaffbd3c73b5c2027c86f83aad",
+	    token: "1",
+	    creator_name: null,
+	    image: "https://ipfs.io/ipfs/QmUjyQAewKS5EbCkrBVh9P1L9xmNvfHALygDTS6F2Cmhcb/1.jpg",
+	    is_darkblocked: false
 	}
 ]
