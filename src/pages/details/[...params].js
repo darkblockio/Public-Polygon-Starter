@@ -68,7 +68,7 @@ const NftDetailCard = () => {
                 <div className="mx-4 md:mr-2">
 
                   {/* Setup the Darkblock Polygon Widget
-                    * For more information visit https://www.npmjs.com/package/@darkblock.io/sol-widget
+                    * For more information visit https://www.npmjs.com/package/@darkblock.io/matic-widget
                     * @param {contract}
                     * @param {id}
                     * @param {w3}
