@@ -36,7 +36,7 @@ export const getNFTs = async (address, platform, offset = 0) => {
 }
 
 export const getNFTsOwned = async (address, platform, offSet, arrayOfNfts = []) => {
-  const pageSize = 48 // Amount of nfts you want to see in the page 
+  const pageSize = 48 // Amount of nfts you want to see in the page
   return await fetch(
     `${baseApi}/nfts/collected?platform=${platform}&account=${address}&offset=${offSet}&page_size=${pageSize}`
   )
@@ -83,27 +83,6 @@ export const getNFTsOwned = async (address, platform, offSet, arrayOfNfts = []) 
  */
 export const getNFTMetadata = async (contract, id, platform) => {
   return await fetch(`${baseApi}/nft/metadata?platform=${platform}&contract=${contract}&token=${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      return {
-        nft: data.data,
-        loaded: true,
-        error: false,
-        errorMsg: null,
-      }
-    })
-    .catch((error) => {
-      return {
-        nft: null,
-        loaded: true,
-        error: true,
-        errorMsg: error,
-      }
-    })
-}
-
-export const getNFTData = async (contract, tokenId) => {
-  return await fetch(`${baseApi}/nft/metadata?platform=Ethereum&contract=${contract}&token=${tokenId}`)
     .then((response) => response.json())
     .then((data) => {
       return {
