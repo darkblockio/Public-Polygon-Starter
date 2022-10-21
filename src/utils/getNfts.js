@@ -2,7 +2,6 @@ import { collection } from './collection'
 import { filter } from './filter'
 
 const baseApi = process.env.NEXT_PUBLIC_BASE_API ? process.env.NEXT_PUBLIC_BASE_API : 'https://api.darkblock.io/v1/'
-const useWalletAddress = false //true if you want to see nfts of your wallet, false if you want to use JSON file of a collection
 
 /**
  * Get the list of nfts in a wallet
@@ -45,8 +44,8 @@ export const getNFTsOwned = async (address, platform, offSet, arrayOfNfts = []) 
     .then((data) => {
       let filterData
       if (data.data) {
-        //handle wallet without nfts exceptio
-        if (useWalletAddress === 'true') {
+        //handle wallet without nfts exception, true if you want to see nfts of your wallet, false if you want to use JSON file of a collection
+        if (process.env.NEXT_PUBLIC_REACT_APP_USE_WALLET_ADDRESS === 'true') {
           filterData = filter(arrayOfNfts, data)
         } else {
           filterData = filter(collection, data)
