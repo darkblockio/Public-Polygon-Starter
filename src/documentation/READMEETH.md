@@ -5,7 +5,7 @@
 <h2>Intro:</h2>
 <h3>We are going to clone a simple web app of nfts using Next and our Polygon widget.</h3>
 <h3>
-<a href="https://nextjs.org/docs">Check out the Next documents here</a>and follow the open-source documentation to create and deploy your site along with the documentation we have provided.</h3><hr>
+<a href="https://nextjs.org/docs">Check out the Next documents here</a> and follow the open-source documentation to create and deploy your site along with the documentation we have provided.</h3><hr>
 <h2>Clone</h2><br>
 <ol>
 <li>Go to your desktop and create a folder where you want your project to live. Open a new terminal, GitBash Here, or cmd.</li><br>
@@ -28,7 +28,7 @@ npm install or yarn install
 
 <h2>How do you run your site locally?</h2>
 <ol>
-<li>In the command line, cd into the directory that you created. 
+<li>In the command line, cd into the directory that you created.
 <h3>Ex.</h3>
 <br>
 
@@ -54,9 +54,12 @@ npm run dev
 <h2>Create .env file in the root of the project:</h2>
 
 <h3>Create a file in the root of the project <strong>.env</strong> and put the following code:</h3>
-NEXT_PUBLIC_REACT_APP_WALLET_ADDRESS=YourDefaultAddresHere //this is the default address with NFTs you want to see as a gallery
-<br>
-NEXT_PUBLIC_REACT_APP_USE_WALLET_ADDRESS=true //true if you want to use a wallet addres, false if you want to use a Json object
+
+```
+NEXT_PUBLIC_REACT_APP_WALLET_ADDRESS     = YourDefaultAddresHere // this is the default address with NFTs you want to see as a gallery
+NEXT_PUBLIC_REACT_APP_USE_WALLET_ADDRESS = true                  // <true> if you want to use a wallet addres, <false> if you want to use a Json object
+NEXT_PUBLIC_REACT_APP_API_KEY            = YourDarkblockAPIKey   //
+```
 
 <h3>Restart your app and run</h3>
 <br>
@@ -74,4 +77,4 @@ npm run dev
 
 <img src="./EthereumAuth.png"><br>
 
-<h3>The whole code for this guide is in <a href="https://github.com/darkblockio/Starter-Ethereum-Nextjs">Github</a></h3>
+<h3>The whole code for this guide is in <a href="https://github.com/darkblockio/">Github</a></h3>

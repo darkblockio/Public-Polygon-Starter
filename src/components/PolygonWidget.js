@@ -33,7 +33,6 @@ const config = {
 }
 
 const cbUpgrade = (param1) => {
-  // console.log('eth upgrade cb', param1)
   if (param1 === 'upload_complete') {
     Router.reload()
   }
