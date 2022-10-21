@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import { getNFTMetadata } from '../../utils/getNfts'
-import { validateImage } from '../../utils/validateImage'
+import { validateImage, isImageType } from '../../utils/validateImage'
 import { dateTimeFormat } from '../../utils/dateFormatter'
 import { shortenAddr } from '../../utils/shortAddress'
 import { useRouter } from 'next/router'
@@ -51,15 +51,21 @@ const NftDetailCard = () => {
             <div className="grid grid-cols-1 gap-1 pt-8 md:grid-cols-3">
               <div className="md:pl-20">
                 <div className="mb-10 font-sans text-4xl font-bold text-center md:hidden md:mb-2">{nftData.name}</div>
-                {nftData && nftData.image ? (
-                  <img // eslint-disable-line
-                    className="px-4 mx-auto my-5 rounded-md h-66"
-                    src={validateImage(nftData.image)}
-                    alt="NFT"
+                { ( !!nftData.animation_url && !isImageType(nftData.animation_url) ) ? (
+                  <video
+                    className="mx-auto my-5 mb-12 border border-gray-200 rounded-md shadow-md h-66"
+                    src={validateImage(nftData.animation_url)}
+                    autoPlay
+                    muted
+                    loop
                   />
                 ) : (
-                  <></>
-                )}
+                  <img // eslint-disable-line
+                    alt="NFT"
+                    className="mx-auto my-5 mb-12 border border-gray-200 rounded-md shadow-md h-66"
+                    src={ validateImage(nftData.image) }
+                  />
+                ) }
               </div>
 
               <div className="w-full max-w-4xl mx-auto md:col-span-2">
