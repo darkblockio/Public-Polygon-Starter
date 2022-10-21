@@ -12,7 +12,7 @@ export default function Home() {
   const [myNfts, setMyNfts] = useState([])
   const [offset, setOffset] = useState(0)
   const [offsetMyNfts, setOffsetMyNfts] = useState(0)
-  const [HasMoreMyNfts, setHasMoreMyNfts] = useState(false)
+  const [HasMoreNfts, setHasMoreNfts] = useState(false)
   const [showNfts, setShowNfts] = useState('created')
   const [arrayOfNfts, setArrayOfNfts] = useState([])
   const [isLoaded, setIsLoaded] = useState(true)
@@ -23,6 +23,7 @@ export default function Home() {
       setIsLoaded(false)
       setArrayOfNfts(res.nfts.data)
       setOffset(res.next_offset)
+      setHasMoreNfts(res.has_more)
       setIsLoaded(true)
     })
   }
@@ -38,7 +39,6 @@ export default function Home() {
       }
       setMyNfts(allNfts)
       setOffsetMyNfts(nfts.nfts.next_offset)
-      setHasMoreMyNfts(nfts.nfts.has_more)
       setIsLoaded(true)
     })
   }
@@ -104,7 +104,7 @@ export default function Home() {
         )}
         
         {/* load More button if you want to get more nfts of your wallet*/}
-        {HasMoreMyNfts && showNfts === 'created' && (
+        {HasMoreNfts && showNfts === 'created' && (
           <button
             onClick={getData}
             className="flex justify-center p-2 m-auto font-semibold bg-fontColor bg-gray-200 rounded "
