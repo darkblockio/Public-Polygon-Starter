@@ -12,7 +12,6 @@ export default function Home() {
   const [myNfts, setMyNfts] = useState([])
   const [offset, setOffset] = useState(0)
   const [offsetMyNfts, setOffsetMyNfts] = useState(0)
-  const [HasMoreNfts, setHasMoreNfts] = useState(false)
   const [HasMoreMyNfts, setHasMoreMyNfts] = useState(false)
   const [showNfts, setShowNfts] = useState('created')
   const [arrayOfNfts, setArrayOfNfts] = useState([])
@@ -24,7 +23,6 @@ export default function Home() {
       setIsLoaded(false)
       setArrayOfNfts(res.nfts.data)
       setOffset(res.next_offset)
-      setHasMoreNfts(res.has_more)
       setIsLoaded(true)
     })
   }
@@ -96,6 +94,7 @@ export default function Home() {
             My Filtered NFTs
           </span>
         </div>
+
         {isLoaded ? (
           <div className="grid gap-3 px-4 pt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
             {renderNFTs()}
@@ -103,7 +102,9 @@ export default function Home() {
         ) : (
           <Loading />
         )}
-        {HasMoreNfts && showNfts === 'created' && (
+        
+        {/* load More button if you want to get more nfts of your wallet*/}
+        {HasMoreMyNfts && showNfts === 'created' && (
           <button
             onClick={getData}
             className="flex justify-center p-2 m-auto font-semibold bg-fontColor bg-gray-200 rounded "
@@ -112,6 +113,7 @@ export default function Home() {
           </button>
         )}
 
+        {/* You will see your nfts that matchs with the collection */}
         {myNfts?.length === 0 && showNfts === "darkblockeds" && (
           <div className="w-full h-screen m-auto text-xl text-center text-fontColor">
             {`Oops, looks like you don't have any matching NFTs in this wallet.`}
