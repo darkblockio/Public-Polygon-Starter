@@ -4,6 +4,14 @@ import { filter } from './filter'
 const baseApi = process.env.NEXT_PUBLIC_BASE_API ? process.env.NEXT_PUBLIC_BASE_API : 'https://api.darkblock.io/v1/'
 const useWalletAddress = false //true if you want to see nfts of your wallet, false if you want to use JSON file of a collection
 
+/**
+ * Get the list of nfts in a wallet
+ * Returns [NFTsArray]
+ *
+ * @param {address} Wallet address
+ * @param {platform} Could be Polygon, Ethereum, Avalanche, Solana
+ * @return {offset}
+ */
 export const getNFTs = async (address, platform, offset = 0) => {
   const pageSize = 48
   return await fetch(
@@ -66,6 +74,14 @@ export const getNFTsOwned = async (address, platform, offSet, arrayOfNfts = []) 
     })
 }
 
+/**
+ * Get metadata from an NFT
+ * Returns object with the NFT metadata information
+ *
+ * @param {contract} x The contract address
+ * @param {id} The token of the contract
+ * @return {platform} Could be Polygon, Ethereum, Avalanche, Solana
+ */
 export const getNFTMetadata = async (contract, id, platform) => {
   return await fetch(`${baseApi}/nft/metadata?platform=${platform}&contract=${contract}&token=${id}`)
     .then((response) => response.json())

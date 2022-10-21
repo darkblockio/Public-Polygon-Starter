@@ -9,6 +9,7 @@ export const Web3Provider = ({ children }) => {
   const [wallet, setWallet] = useState()
   const [address, setAddress] = useState()
 
+  // Codes of the chain
   const chainValues = {
     int: 137,
     hex: '0x89'
@@ -85,12 +86,11 @@ export const Web3Provider = ({ children }) => {
     web3Modal = new Web3Modal({
       network: 'mainnet',
       cacheProvider: true,
-      
+
     })
   }
 
   const connect = useCallback(async function () {
-    // await disconnect()
 
     if (typeof window !== 'undefined' && window.ethereum) {
       await window.ethereum.request({
