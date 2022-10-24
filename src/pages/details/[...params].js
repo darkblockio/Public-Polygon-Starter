@@ -42,7 +42,6 @@ const NftDetailCard = () => {
   }, [id, contract])
 
   useEffect(() => {
-    console.log(nftData)
     if ((!creators || creators.length < 1) && nftData != null && nftData.creator_address) {
       setCreators([nftData.creator_address])
     }
