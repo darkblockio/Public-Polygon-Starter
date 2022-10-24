@@ -74,8 +74,8 @@ export const getNFTsOwned = async (address, platform, offSet, arrayOfNfts = []) 
 }
 
 /**
- * Get metadata from an NFT
- * Returns object with the NFT metadata information
+ * Get metadata from a NFT
+ * Returns an object with the NFT metadata information
  *
  * @param {contract} x The contract address
  * @param {id} The token of the contract

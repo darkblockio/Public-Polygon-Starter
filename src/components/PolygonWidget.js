@@ -18,7 +18,7 @@ const PolygonUpgradeWidget = dynamic(
 )
 
 const cb = (param1) => {
-  // console.log('ethwidget cb', param1)
+  // console.log('Polygon cb', param1)
 }
 
 const config = {

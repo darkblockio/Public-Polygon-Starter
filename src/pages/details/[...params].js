@@ -34,7 +34,7 @@ const NftDetailCard = () => {
   useEffect(() => {
     if (id && contract && id !== undefined && contract !== undefined) {
       setIsLoading(true)
-      getNFTMetadata(contract, id, `${platform}`).then((data) => {
+      getNFTMetadata(contract, id, platform).then((data) => {
         setNftData(data.nft)
         setIsLoading(false)
       })
