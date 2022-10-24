@@ -6,7 +6,7 @@ import { dateTimeFormat } from '../../utils/dateFormatter'
 import { shortenAddr } from '../../utils/shortAddress'
 import { useRouter } from 'next/router'
 import { Web3Context } from '../../context/Web3Context'
-import { PolygonWidget } from "../../components/PolygonWidget";
+import { PolygonWidget } from '../../components/PolygonWidget'
 import { Loading } from '../../components/Loading'
 
 const countAttribs = (nft) => {
@@ -29,6 +29,7 @@ const NftDetailCard = () => {
   const [nftData, setNftData] = useState(null)
   const { wallet } = useContext(Web3Context)
   const [isLoading, setIsLoading] = useState(false)
+  const [creators, setCreators] = useState([])
 
   useEffect(() => {
     if (id && contract && id !== undefined && contract !== undefined) {
@@ -39,6 +40,22 @@ const NftDetailCard = () => {
       })
     }
   }, [id, contract])
+
+  useEffect(() => {
+    console.log(nftData)
+    if ((!creators || creators.length < 1) && nftData != null && nftData.creator_address) {
+      console.log('nunca entra')
+      setCreators([nftData.creator_address])
+    }
+  }, [nftData])
+
+  const shortPlatforms = {
+    Ethereum: `eth`,
+    Polygon: `matic`,
+    Avalanche: `avax`,
+    Solana: `sol`,
+    Tezos: `tez`,
+  }
 
   return (
     <div>
@@ -51,7 +68,7 @@ const NftDetailCard = () => {
             <div className="grid grid-cols-1 gap-1 pt-8 md:grid-cols-3">
               <div className="md:pl-20">
                 <div className="mb-10 font-sans text-4xl font-bold text-center md:hidden md:mb-2">{nftData.name}</div>
-                { ( !!nftData.animation_url && !isImageType(nftData.animation_url) ) ? (
+                {!!nftData.animation_url && !isImageType(nftData.animation_url) ? (
                   <video
                     className="mx-auto my-5 mb-12 border border-gray-200 rounded-md shadow-md h-66"
                     src={validateImage(nftData.animation_url)}
@@ -63,23 +80,22 @@ const NftDetailCard = () => {
                   <img // eslint-disable-line
                     alt="NFT"
                     className="mx-auto my-5 mb-12 border border-gray-200 rounded-md shadow-md h-66"
-                    src={ validateImage(nftData.image) }
+                    src={validateImage(nftData.image)}
                   />
-                ) }
+                )}
               </div>
 
               <div className="w-full max-w-4xl mx-auto md:col-span-2">
                 <div className="hidden mb-10 font-sans text-4xl font-bold md:block md:mb-3">{nftData.name}</div>
                 <div className="pt-2 mx-2">{nftData.nft_description || nftData.description}</div>
                 <div className="mx-4 md:mr-2">
-
                   {/* Setup the Darkblock Polygon Widget
-                    * For more information visit https://www.npmjs.com/package/@darkblock.io/matic-widget
-                    * @param {contract}
-                    * @param {id}
-                    * @param {w3}
-                    * @param {upgrader} optional
-                  */}
+                   * For more information visit https://www.npmjs.com/package/@darkblock.io/matic-widget
+                   * @param {contract}
+                   * @param {id}
+                   * @param {w3}
+                   * @param {upgrader} optional
+                   */}
 
                   <div className="flex justify-end pb-4 text-gray-800">
                     <PolygonWidget contract={nftData.contract} id={nftData.token} w3={wallet} upgrade={true} />
@@ -100,7 +116,7 @@ const NftDetailCard = () => {
                       </div>
                     </div>
                     <div className="border border-gray-200 rounded-md">
-                      {nftData.traits?.map((trait,index) => (
+                      {nftData.traits?.map((trait, index) => (
                         <div key={index} className="grid grid-cols-2 p-2 md:grid-cols-2 ">
                           <p className="pt-1 text-sm font-semibold text-left text-gray-500">{trait.name}</p>
                           <p className="text-base text-right text-fontColor ">{shortenAddr(trait.value)}</p>
@@ -192,14 +208,20 @@ const NftDetailCard = () => {
                     <div className="flex pb-2 mt-2">
                       <h2 className="font-bold ">Created by</h2>
                       <div className="px-2 py-1 ml-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded">
-                        {nftData.creators?.length ? nftData.creators.length : 1}
+                        {creators?.length ? creators.length : 0}
                       </div>
                     </div>
-                    {nftData.creator_address && (
-                      <p className="p-3 font-medium text-center text-gray-500 border border-gray-100 rounded">
-                        {shortenAddr(nftData.creator_address)}
-                      </p>
-                    )}
+                    {creators?.map((item, i) => (
+                      <a
+                        className="pb-2 font-medium underline truncate"
+                        key={i}
+                        href={`https://app.darkblock.io/platform/${shortPlatforms[platform]}/${item}`}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <p>{shortenAddr(item)}</p>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
