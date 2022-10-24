@@ -44,7 +44,6 @@ const NftDetailCard = () => {
   useEffect(() => {
     console.log(nftData)
     if ((!creators || creators.length < 1) && nftData != null && nftData.creator_address) {
-      console.log('nunca entra')
       setCreators([nftData.creator_address])
     }
   }, [nftData])
