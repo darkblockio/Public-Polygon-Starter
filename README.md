@@ -64,6 +64,7 @@ NEXT_PUBLIC_REACT_APP_USE_WALLET_ADDRESS = true
 
 NEXT_PUBLIC_REACT_APP_API_KEY = yourApikey
 ```
+
 <h3>Restart your app and run</h3>
 <br>
 
@@ -76,4 +77,4 @@ npm run dev
 
 <h3>And then you have the <strong>Darkblock Polygon Widget</strong> working!!!	&#x1f609; Congrats.</h3><br>
 
-
+<h2>Please join us in Discord <a href="https://discord.com/channels/832678301814095942/832678301814095945">here</a> for any bugs or extra information.</h2>
