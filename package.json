@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@darkblock.io/matic-widget": "^0.2.17",
+    "@darkblock.io/matic-widget": "^0.2.46",
     "@metamask/detect-provider": "^2.0.0",
     "ethers": "^5.7.1",
     "next": "12.3.0",
