@@ -1,0 +1,28 @@
+{
+  "name": "starter-polygon-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@darkblock.io/matic-widget": "^0.2.46",
+    "@metamask/detect-provider": "^2.0.0",
+    "ethers": "^5.7.1",
+    "next": "12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "web3": "^1.8.0",
+    "web3modal": "^1.9.9"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.11",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  }
+}
